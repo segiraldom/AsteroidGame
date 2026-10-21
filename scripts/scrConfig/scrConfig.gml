@@ -6,9 +6,10 @@
 
 // --- Jugador ---
 #macro JUGADOR_ACELERACION 0.1      // empuje por frame al avanzar
+#macro JUGADOR_ACELERACION_ATRAS 0.05 // empuje por frame al ir hacia atrás (más suave)
 #macro JUGADOR_VEL_MAX 6            // velocidad máxima de la nave
 #macro JUGADOR_FRICCION 0.03        // desaceleración por frame
-#macro JUGADOR_GIRO 1               // grados que gira por frame
+#macro JUGADOR_GIRO 1.5               // grados que gira por frame
 #macro JUGADOR_CADENCIA 12          // frames entre disparos (60 fps -> 5 por segundo)
 
 // --- Bala ---

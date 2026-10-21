@@ -11,6 +11,10 @@ if keyboard_check(vk_up) || keyboard_check(ord("W")){
 	motion_add(image_angle, JUGADOR_ACELERACION);
 }
 
+if keyboard_check(vk_down) || keyboard_check(ord("S")){
+	motion_add(image_angle + 180, JUGADOR_ACELERACION_ATRAS);
+}
+
 if keyboard_check(vk_left) || keyboard_check(ord("A")){
 	image_angle += JUGADOR_GIRO;
 }
