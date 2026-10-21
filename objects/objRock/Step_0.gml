@@ -1,2 +1,2 @@
-move_wrap(true,true,70);
-image_angle+=1;
+move_wrap(true,true,ROCA_MARGEN_WRAP);
+image_angle += ROCA_GIRO;

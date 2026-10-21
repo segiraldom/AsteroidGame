@@ -23,7 +23,7 @@
   ],
   "name":"sprPlayer",
   "nineSlice":null,
-  "origin":0,
+  "origin":4,
   "parent":{
     "name":"AsteroidGame",
     "path":"AsteroidGame.yyp",
