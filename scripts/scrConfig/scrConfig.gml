@@ -19,3 +19,8 @@
 #macro ROCA_VELOCIDAD 2             // velocidad base de una roca
 #macro ROCA_GIRO 1                  // grados que gira la roca por frame
 #macro ROCA_MARGEN_WRAP 70          // margen para reaparecer al salir de la pantalla
+
+// --- Menú ---
+#macro MENU_BOTON_ANCHO 320         // ancho de cada botón
+#macro MENU_BOTON_ALTO 70           // alto de cada botón
+#macro MENU_BOTON_SEPARACION 24     // espacio entre botones
