@@ -67,5 +67,18 @@
 enum eEstadoNivel {
 	INTRO,
 	JUGANDO,
-	COMPLETADO
+	COMPLETADO,
+	PERDIDO
 }
+
+// --- Explosión de la nave ---
+#macro EXPLOSION_PARTICULAS 18               // fragmentos que salen despedidos
+#macro EXPLOSION_VEL_MIN 1.5                 // velocidad mínima de un fragmento
+#macro EXPLOSION_VEL_MAX 5                   // velocidad máxima de un fragmento
+#macro EXPLOSION_FRICCION 0.96               // los fragmentos frenan multiplicando su velocidad por este valor
+#macro EXPLOSION_LARGO_MIN 6                 // largo mínimo de un fragmento (px)
+#macro EXPLOSION_LARGO_MAX 14                // largo máximo de un fragmento (px)
+#macro EXPLOSION_GIRO_MAX 8                  // giro máximo de un fragmento por frame (grados)
+#macro EXPLOSION_ONDA_VEL 2.5                // crecimiento de la onda expansiva por frame (px)
+#macro EXPLOSION_DURACION (1 * FPS_JUEGO)    // frames que dura la explosión (1 s)
+#macro PERDIDO_ESPERA (1.5 * FPS_JUEGO)      // frames entre la última explosión y el game over

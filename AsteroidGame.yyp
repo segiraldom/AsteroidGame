@@ -20,6 +20,7 @@
   "name":"AsteroidGame",
   "resources":[
     {"id":{"name":"objBullet","path":"objects/objBullet/objBullet.yy",},},
+    {"id":{"name":"objExplosion","path":"objects/objExplosion/objExplosion.yy",},},
     {"id":{"name":"objGame","path":"objects/objGame/objGame.yy",},},
     {"id":{"name":"objGameOver","path":"objects/objGameOver/objGameOver.yy",},},
     {"id":{"name":"objMenu","path":"objects/objMenu/objMenu.yy",},},

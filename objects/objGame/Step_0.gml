@@ -8,6 +8,12 @@ if temporizador > 0{
 	temporizador -= 1;
 }
 
+// Sin vidas: se espera un momento para que se vea la explosión y luego game over
+if global.vidas <= 0 && estado != eEstadoNivel.PERDIDO{
+	estado = eEstadoNivel.PERDIDO;
+	temporizador = PERDIDO_ESPERA;
+}
+
 switch (estado){
 	case eEstadoNivel.INTRO:
 		// Al empezar el nivel la nave es invulnerable mientras se ve el cartel
@@ -38,6 +44,12 @@ switch (estado){
 				global.nivel += 1;
 				room_restart();
 			}
+		}
+		break;
+
+	case eEstadoNivel.PERDIDO:
+		if temporizador <= 0{
+			room_goto(rmGameOver);
 		}
 		break;
 }
