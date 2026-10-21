@@ -1,0 +1,10 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrPartida",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrPartida",
+  "parent":{"name":"AsteroidGame","path":"AsteroidGame.yyp",},
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

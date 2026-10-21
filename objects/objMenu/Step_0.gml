@@ -38,7 +38,10 @@ if _activar{
 		seleccion = _hover;
 	}
 	switch (seleccion){
-		case 0: room_goto(Room1); break;
+		case 0:
+			scrIniciarPartida();
+			room_goto(Room1);
+			break;
 		case 1: game_end(); break;
 	}
 }

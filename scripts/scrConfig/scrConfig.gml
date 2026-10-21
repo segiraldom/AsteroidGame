@@ -24,3 +24,11 @@
 #macro MENU_BOTON_ANCHO 320         // ancho de cada botón
 #macro MENU_BOTON_ALTO 70           // alto de cada botón
 #macro MENU_BOTON_SEPARACION 24     // espacio entre botones
+
+// --- Partida y puntaje ---
+#macro VIDAS_INICIALES 3            // vidas al empezar una partida
+#macro PUNTOS_ROCA_GRANDE 20        // puntos al partir una roca grande
+#macro PUNTOS_ROCA_PEQUENA 50       // puntos al destruir una roca pequeña
+
+// --- HUD ---
+#macro HUD_MARGEN 20                // separación del HUD con el borde de la pantalla
