@@ -32,6 +32,8 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scrAyuda","path":"scripts/scrAyuda/scrAyuda.yy",},},
     {"id":{"name":"scrConfig","path":"scripts/scrConfig/scrConfig.yy",},},
+    {"id":{"name":"scrJugador","path":"scripts/scrJugador/scrJugador.yy",},},
+    {"id":{"name":"scrModo","path":"scripts/scrModo/scrModo.yy",},},
     {"id":{"name":"scrPantalla","path":"scripts/scrPantalla/scrPantalla.yy",},},
     {"id":{"name":"scrPartida","path":"scripts/scrPartida/scrPartida.yy",},},
     {"id":{"name":"scrRoca","path":"scripts/scrRoca/scrRoca.yy",},},

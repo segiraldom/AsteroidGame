@@ -6,6 +6,11 @@ if !variable_global_exists("puntaje"){
 	scrIniciarPartida();
 }
 
+// Modo de juego por defecto si se abre la sala sin pasar por el menú
+if !variable_global_exists("modo"){
+	global.modo = MODO_1J;
+}
+
 // Quitar las rocas colocadas a mano en la sala: las rocas las genera el nivel
 with (objRock){
 	instance_destroy();
@@ -43,12 +48,20 @@ repeat (_cantidad){
 	}
 }
 
-// Colocar la nave en el centro, mirando hacia arriba
+// Colocar las naves en el centro, mirando hacia arriba.
+// En modo 2 jugadores van una a cada lado para que no se estorben al empezar.
+var _separacion = scrMultijugador() ? JUGADOR_2_DESPLAZAMIENTO_X : 0;
 if instance_exists(objPlayer){
-	objPlayer.x = _centro_x;
+	objPlayer.x = _centro_x - _separacion;
 	objPlayer.y = _centro_y;
 	objPlayer.speed = 0;
 	objPlayer.image_angle = 90;
+}
+
+// Segunda nave del modo 2 jugadores
+if scrMultijugador(){
+	var _p2 = instance_create_layer(_centro_x + _separacion, _centro_y, "Instances", objPlayer);
+	scrConfigurarJugador(_p2, 2);
 }
 
 // Empieza con el cartel de "NIVEL N"

@@ -17,20 +17,20 @@ if ayuda_dano > 0{
 	ayuda_dano -= 1;
 }
 
-//Movimiento (flechas o WASD)
-if keyboard_check(vk_up) || keyboard_check(ord("W")){
+//Movimiento (las teclas de este jugador; ver scrControles)
+if scrAlgunaTecla(controles.arriba){
 	motion_add(image_angle, JUGADOR_ACELERACION);
 }
 
-if keyboard_check(vk_down) || keyboard_check(ord("S")){
+if scrAlgunaTecla(controles.abajo){
 	motion_add(image_angle + 180, JUGADOR_ACELERACION_ATRAS);
 }
 
-if keyboard_check(vk_left) || keyboard_check(ord("A")){
+if scrAlgunaTecla(controles.izquierda){
 	image_angle += JUGADOR_GIRO;
 }
 
-if keyboard_check(vk_right) || keyboard_check(ord("D")){
+if scrAlgunaTecla(controles.derecha){
 	image_angle -= JUGADOR_GIRO;
 }
 
@@ -44,7 +44,13 @@ if espera_disparo > 0{
 	espera_disparo -= 1;
 }
 
-if (mouse_check_button(mb_left) || keyboard_check(vk_space)) && espera_disparo <= 0{
+//Disparo (la tecla de este jugador; el jugador 1 también dispara con el clic)
+var _disparando = scrAlgunaTecla(controles.disparo);
+if numero == 1{
+	_disparando = _disparando || mouse_check_button(mb_left);
+}
+
+if _disparando && espera_disparo <= 0{
 	// La bala nace en la punta de la nave
 	var _x = x + lengthdir_x(BALA_DISTANCIA_PUNTA, image_angle);
 	var _y = y + lengthdir_y(BALA_DISTANCIA_PUNTA, image_angle);

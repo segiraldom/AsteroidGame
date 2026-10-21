@@ -1,8 +1,13 @@
 // Dibujar por encima de las rocas decorativas
 depth = -100;
 
-opciones = ["JUGAR", "SALIR"];
-seleccion = 0;
+opciones = [MENU_JUGAR, MENU_MODO, MENU_SALIR];
+seleccion = MENU_JUGAR;
+
+// El modo elegido se queda guardado entre partidas
+if !variable_global_exists("modo"){
+	global.modo = MODO_1J;
+}
 
 // Para detectar si el ratón se movió (así el teclado y el ratón no se pelean)
 mouse_previo_x = mouse_x;

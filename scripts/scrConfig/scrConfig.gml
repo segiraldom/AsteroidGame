@@ -26,6 +26,22 @@
 #macro MENU_BOTON_ALTO 70           // alto de cada botón
 #macro MENU_BOTON_SEPARACION 24     // espacio entre botones
 
+// Opciones del menú principal
+#macro MENU_JUGAR 0                 // empezar la partida
+#macro MENU_MODO 1                  // cambiar entre 1 y 2 jugadores
+#macro MENU_SALIR 2                 // cerrar el juego
+
+// --- Modo de juego ---
+#macro MODO_1J 1                    // un jugador
+#macro MODO_2J 2                    // dos jugadores en la misma partida (vidas compartidas)
+
+// --- Multijugador ---
+#macro JUGADOR_2_DESPLAZAMIENTO_X 170  // separación de las dos naves respecto al centro
+
+// --- Colores de los jugadores ---
+#macro COLOR_JUGADOR_1 make_colour_rgb(255, 255, 255)   // blanco
+#macro COLOR_JUGADOR_2 make_colour_rgb(140, 200, 255)   // celeste, para distinguir las naves
+
 // --- Partida y puntaje ---
 #macro VIDAS_INICIALES 3            // vidas al empezar una partida
 #macro PUNTOS_ROCA_GRANDE 20        // puntos al partir una roca grande

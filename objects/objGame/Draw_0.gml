@@ -8,6 +8,11 @@ draw_text_transformed(HUD_MARGEN, HUD_MARGEN, "PUNTAJE: " + string(global.puntaj
 draw_set_halign(fa_center);
 draw_text_transformed(room_width / 2, HUD_MARGEN, "NIVEL: " + string(global.nivel), 1.5, 1.5, 0);
 
+// En modo 2 jugadores se recuerda que las vidas son compartidas
+if scrMultijugador(){
+	draw_text_transformed(room_width / 2, HUD_MARGEN + 44, "MODO: " + scrModoNombre(), 1.3, 1.3, 0);
+}
+
 draw_set_halign(fa_right);
 draw_text_transformed(room_width - HUD_MARGEN, HUD_MARGEN, "VIDAS: " + string(global.vidas), 1.5, 1.5, 0);
 
@@ -16,11 +21,13 @@ for (var i = 0; i < global.vidas; i++){
 	draw_sprite_ext(sprPlayer, 0, room_width - HUD_MARGEN - 16 - i * 36, HUD_MARGEN + 56, 0.5, 0.5, 90, c_white, 1);
 }
 
-// Ayudas activas: icono, nombre y barra con el tiempo restante (debajo de las vidas)
-if instance_exists(objPlayer){
-	var _fila = 0;
+// Ayudas activas de cada nave: icono, nombre y barra con el tiempo restante
+// (debajo de las vidas). En 2 jugadores cada fila indica a quién pertenece.
+var _fila = 0;
+with (objPlayer){
+	var _prefijo = scrMultijugador() ? "J" + string(numero) + "  " : "";
 	for (var _t = 0; _t < AYUDA_TIPOS_TEMPORALES; _t++){
-		var _restante = scrAyudaTiempo(objPlayer, _t);
+		var _restante = scrAyudaTiempo(self, _t);
 		if _restante > 0{
 			var _color = scrAyudaColor(_t);
 			var _yf = HUD_MARGEN + HUD_AYUDA_Y0 + _fila * HUD_AYUDA_FILA;
@@ -31,14 +38,14 @@ if instance_exists(objPlayer){
 			draw_set_halign(fa_right);
 			draw_set_valign(fa_bottom);
 			draw_set_color(_color);
-			draw_text(_xb2, _yf - 2, scrAyudaNombre(_t));
+			draw_text(_xb2, _yf - 2, _prefijo + scrAyudaNombre(_t));
 			draw_rectangle(_xb1, _yf + 2, _xb2, _yf + 2 + HUD_AYUDA_BARRA_ALTO, true);
 			draw_rectangle(_xb1, _yf + 2, _xb1 + HUD_AYUDA_BARRA_ANCHO * (_restante / AYUDA_DURACION), _yf + 2 + HUD_AYUDA_BARRA_ALTO, false);
 			_fila += 1;
 		}
 	}
-	draw_set_color(c_white);
 }
+draw_set_color(c_white);
 
 // Carteles del nivel
 draw_set_halign(fa_center);

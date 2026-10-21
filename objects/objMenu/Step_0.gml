@@ -13,6 +13,11 @@ if keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W")){
 	seleccion = (seleccion - 1 + _total) mod _total;
 }
 
+// El modo de juego se cambia con izquierda / derecha mientras está seleccionado
+if seleccion == MENU_MODO && (keyboard_check_pressed(vk_left) || keyboard_check_pressed(vk_right)){
+	scrAlternarModo();
+}
+
 // Ratón: qué botón está bajo el cursor (-1 si ninguno)
 var _hover = -1;
 for (var i = 0; i < _total; i++){
@@ -38,10 +43,13 @@ if _activar{
 		seleccion = _hover;
 	}
 	switch (seleccion){
-		case 0:
+		case MENU_MODO:
+			scrAlternarModo();
+			break;
+		case MENU_JUGAR:
 			scrIniciarPartida();
 			room_goto(Room1);
 			break;
-		case 1: game_end(); break;
+		case MENU_SALIR: game_end(); break;
 	}
 }

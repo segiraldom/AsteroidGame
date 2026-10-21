@@ -1,3 +1,7 @@
+// Jugador al que pertenece esta nave (1 o 2), con sus teclas y su color.
+// objGame cambia el de la segunda nave al crearla en modo 2 jugadores.
+scrConfigurarJugador(self, 1);
+
 // Fricción para que la nave frene sola (ver scrConfig)
 friction = JUGADOR_FRICCION;
 

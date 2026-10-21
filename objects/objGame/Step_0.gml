@@ -8,17 +8,22 @@ if temporizador > 0{
 	temporizador -= 1;
 }
 
-// Sin vidas: se espera un momento para que se vea la explosión y luego game over
+// Sin vidas: las naves que queden también explotan y luego se va al game over
 if global.vidas <= 0 && estado != eEstadoNivel.PERDIDO{
 	estado = eEstadoNivel.PERDIDO;
 	temporizador = PERDIDO_ESPERA;
+	with (objPlayer){
+		instance_create_layer(x, y, "Instances", objExplosion);
+		instance_destroy();
+	}
 }
 
 switch (estado){
 	case eEstadoNivel.INTRO:
-		// Al empezar el nivel la nave es invulnerable mientras se ve el cartel
-		if instance_exists(objPlayer){
-			objPlayer.invulnerabilidad = max(objPlayer.invulnerabilidad, temporizador);
+		// Al empezar el nivel las naves son invulnerables mientras se ve el cartel
+		var _invuln = temporizador;
+		with (objPlayer){
+			invulnerabilidad = max(invulnerabilidad, _invuln);
 		}
 		if temporizador <= 0{
 			estado = eEstadoNivel.JUGANDO;
@@ -30,12 +35,14 @@ switch (estado){
 		ayuda_espera -= 1;
 		if ayuda_espera <= 0{
 			ayuda_espera = irandom_range(AYUDA_ESPERA_MIN, AYUDA_ESPERA_MAX);
-			if !instance_exists(objPowerUp) && instance_exists(objPlayer){
+			// Vale cualquier nave que siga viva
+			var _nave = instance_find(objPlayer, 0);
+			if !instance_exists(objPowerUp) && _nave != noone{
 				var _ax, _ay;
 				do {
 					_ax = random_range(AYUDA_MARGEN_SALA, room_width - AYUDA_MARGEN_SALA);
 					_ay = random_range(AYUDA_MARGEN_SALA, room_height - AYUDA_MARGEN_SALA);
-				} until (point_distance(_ax, _ay, objPlayer.x, objPlayer.y) > AYUDA_DISTANCIA_MIN_NAVE);
+				} until (point_distance(_ax, _ay, _nave.x, _nave.y) > AYUDA_DISTANCIA_MIN_NAVE);
 				var _ayuda = instance_create_layer(_ax, _ay, "Instances", objPowerUp);
 				var _tipo = irandom(AYUDA_TIPOS_TEMPORALES - 1);
 				// Vida extra: poco frecuente, una por nivel y nunca con el máximo de vidas
