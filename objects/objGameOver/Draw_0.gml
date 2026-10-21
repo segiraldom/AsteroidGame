@@ -4,7 +4,7 @@ draw_set_color(c_white);
 
 var _segundos = ceil((GAMEOVER_ESPERA - tiempo) / FPS_JUEGO);
 
-draw_text_transformed(room_width / 2, room_height * 0.30, "GAME OVER", 5, 5, 0);
+draw_text_transformed(room_width / 2, room_height * 0.30, titulo, 5, 5, 0);
 draw_text_transformed(room_width / 2, room_height * 0.50, "PUNTAJE FINAL: " + string(global.puntaje), 2.5, 2.5, 0);
 draw_text_transformed(room_width / 2, room_height * 0.68, "Enter, Espacio o clic para volver al menú", 1.5, 1.5, 0);
 draw_text_transformed(room_width / 2, room_height * 0.75, "Volviendo al menú en " + string(_segundos) + "...", 1.5, 1.5, 0);

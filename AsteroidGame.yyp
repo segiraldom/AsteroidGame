@@ -31,6 +31,7 @@
     {"id":{"name":"scrConfig","path":"scripts/scrConfig/scrConfig.yy",},},
     {"id":{"name":"scrPantalla","path":"scripts/scrPantalla/scrPantalla.yy",},},
     {"id":{"name":"scrPartida","path":"scripts/scrPartida/scrPartida.yy",},},
+    {"id":{"name":"scrRoca","path":"scripts/scrRoca/scrRoca.yy",},},
     {"id":{"name":"sprBullet","path":"sprites/sprBullet/sprBullet.yy",},},
     {"id":{"name":"sprPlayer","path":"sprites/sprPlayer/sprPlayer.yy",},},
     {"id":{"name":"sprRockBig","path":"sprites/sprRockBig/sprRockBig.yy",},},

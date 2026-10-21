@@ -41,3 +41,30 @@
 #macro JUGADOR_PARPADEO 8                    // frames por ciclo de parpadeo al ser invulnerable
 #macro GAMEOVER_ESPERA (6 * FPS_JUEGO)       // frames antes de volver solo al menú (6 s)
 #macro GAMEOVER_GRACIA (FPS_JUEGO / 2)       // frames antes de permitir saltar la pantalla
+
+// --- Niveles ---
+#macro NIVELES_TOTAL 10                      // niveles hasta la victoria
+#macro ROCAS_BASE 2                          // rocas grandes del nivel 1
+#macro ROCAS_NIVELES_POR_EXTRA 2             // cada cuántos niveles se suma una roca grande más
+#macro ROCA_VELOCIDAD_POR_NIVEL 0.25         // velocidad extra de las rocas por cada nivel
+#macro ROCA_DISTANCIA_MIN_NAVE 250           // distancia mínima entre la nave y las rocas al empezar
+#macro NIVEL_INTRO (2 * FPS_JUEGO)           // frames del cartel "NIVEL N" (la nave es invulnerable)
+#macro NIVEL_PAUSA_FIN (2 * FPS_JUEGO)       // frames de pausa tras limpiar el nivel
+
+// --- Tipos de roca ---
+#macro ROCA_NORMAL 0
+#macro ROCA_RAPIDA 1                         // naranja, más veloz
+#macro ROCA_RESISTENTE 2                     // celeste, aguanta varios disparos
+#macro ROCA_RAPIDA_FACTOR 1.6                // multiplicador de velocidad de la roca rápida
+#macro ROCA_RESISTENTE_VIDA 2                // disparos que aguanta la roca resistente grande
+#macro NIVEL_MIN_RAPIDA 3                    // primer nivel con rocas rápidas
+#macro NIVEL_MIN_RESISTENTE 5                // primer nivel con rocas resistentes
+#macro PROB_TIPO_POR_NIVEL 0.1               // probabilidad extra de cada tipo por nivel desde su primer nivel
+#macro PROB_TIPO_MAX 0.4                     // probabilidad máxima de cada tipo
+
+// Estados de un nivel
+enum eEstadoNivel {
+	INTRO,
+	JUGANDO,
+	COMPLETADO
+}

@@ -4,7 +4,10 @@
   "isCompatibility":false,
   "isDnD":false,
   "name":"scrConfig",
-  "parent":{"name":"AsteroidGame","path":"AsteroidGame.yyp",},
+  "parent":{
+    "name":"AsteroidGame",
+    "path":"AsteroidGame.yyp",
+  },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
 }

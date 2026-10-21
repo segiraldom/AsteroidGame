@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrRoca",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrRoca",
+  "parent":{
+    "name":"AsteroidGame",
+    "path":"AsteroidGame.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
