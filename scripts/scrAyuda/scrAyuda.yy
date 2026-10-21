@@ -1,0 +1,10 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrAyuda",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrAyuda",
+  "parent":{"name":"AsteroidGame","path":"AsteroidGame.yyp",},
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

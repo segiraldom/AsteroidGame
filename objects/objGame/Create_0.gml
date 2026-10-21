@@ -54,3 +54,9 @@ if instance_exists(objPlayer){
 // Empieza con el cartel de "NIVEL N"
 estado = eEstadoNivel.INTRO;
 temporizador = NIVEL_INTRO;
+
+// Frames que faltan para que aparezca la siguiente ayuda
+ayuda_espera = irandom_range(AYUDA_ESPERA_MIN, AYUDA_ESPERA_MAX);
+
+// Solo puede aparecer una vida extra por nivel
+vida_extra_lanzada = false;

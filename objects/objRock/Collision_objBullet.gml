@@ -1,4 +1,18 @@
+// Se lee antes de destruir la bala
+var _bala_fuerte = other.dano_extra;
+
 instance_destroy(other);
+
+// Bala de "más daño": destruye la roca entera, sin partirla
+if _bala_fuerte{
+	if sprite_index == sprRockBig{
+		global.puntaje += PUNTOS_ROCA_GRANDE;
+	}else{
+		global.puntaje += PUNTOS_ROCA_PEQUENA;
+	}
+	instance_destroy();
+	exit;
+}
 
 // La roca resistente aguanta varios impactos
 vida -= 1;

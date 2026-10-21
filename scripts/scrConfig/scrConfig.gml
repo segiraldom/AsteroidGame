@@ -82,3 +82,33 @@ enum eEstadoNivel {
 #macro EXPLOSION_ONDA_VEL 2.5                // crecimiento de la onda expansiva por frame (px)
 #macro EXPLOSION_DURACION (1 * FPS_JUEGO)    // frames que dura la explosión (1 s)
 #macro PERDIDO_ESPERA (1.5 * FPS_JUEGO)      // frames entre la última explosión y el game over
+
+// --- Ayudas (power-ups) ---
+#macro AYUDA_ESCUDO 0
+#macro AYUDA_MULTI 1
+#macro AYUDA_DANO 2
+#macro AYUDA_VIDA 3                          // vida extra (efecto inmediato, sin duración)
+#macro AYUDA_TIPOS_TEMPORALES 3              // tipos de ayuda con duración (0, 1 y 2)
+#macro COLOR_AYUDA_ESCUDO make_colour_rgb(70, 150, 255)   // azul
+#macro COLOR_AYUDA_MULTI make_colour_rgb(80, 220, 110)    // verde
+#macro COLOR_AYUDA_DANO make_colour_rgb(255, 70, 70)      // rojo
+#macro COLOR_AYUDA_VIDA make_colour_rgb(255, 215, 60)     // amarillo
+#macro VIDAS_MAX 4                           // máximo de vidas acumuladas
+#macro AYUDA_PROB_VIDA 0.2                // probabilidad de que una aparición sea vida extra (si se puede)
+#macro AYUDA_DURACION (10 * FPS_JUEGO)       // frames que dura cada ayuda al recogerla (10 s)
+#macro AYUDA_ESPERA_MIN (12 * FPS_JUEGO)     // espera mínima entre apariciones (15 s)
+#macro AYUDA_ESPERA_MAX (20 * FPS_JUEGO)     // espera máxima entre apariciones (20 s)
+#macro AYUDA_VIDA_PANTALLA (12 * FPS_JUEGO)  // frames que una ayuda flota antes de desaparecer
+#macro AYUDA_PARPADEO_INICIO (3 * FPS_JUEGO) // frames finales en los que parpadea (ayuda flotante y escudo)
+#macro AYUDA_VELOCIDAD 0.6                   // velocidad con la que flota
+#macro AYUDA_RADIO 30                        // radio del aro que late alrededor de la ayuda
+#macro AYUDA_MARGEN_SALA 80                  // distancia mínima a los bordes al aparecer
+#macro AYUDA_DISTANCIA_MIN_NAVE 150          // distancia mínima a la nave al aparecer
+#macro MULTI_ANGULO 18                       // ángulo entre las balas del disparo múltiple (grados)
+#macro ESCUDO_ROMPE_INVULN (0.5 * FPS_JUEGO) // frames de invulnerabilidad tras romperse el escudo
+
+// --- HUD de ayudas activas ---
+#macro HUD_AYUDA_Y0 100                      // altura de la primera fila, bajo el margen del HUD
+#macro HUD_AYUDA_FILA 36                     // separación vertical entre filas
+#macro HUD_AYUDA_BARRA_ANCHO 140             // ancho de la barra de tiempo
+#macro HUD_AYUDA_BARRA_ALTO 8                // alto de la barra de tiempo

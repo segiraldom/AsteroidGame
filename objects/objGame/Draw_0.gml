@@ -16,6 +16,30 @@ for (var i = 0; i < global.vidas; i++){
 	draw_sprite_ext(sprPlayer, 0, room_width - HUD_MARGEN - 16 - i * 36, HUD_MARGEN + 56, 0.5, 0.5, 90, c_white, 1);
 }
 
+// Ayudas activas: icono, nombre y barra con el tiempo restante (debajo de las vidas)
+if instance_exists(objPlayer){
+	var _fila = 0;
+	for (var _t = 0; _t < AYUDA_TIPOS_TEMPORALES; _t++){
+		var _restante = scrAyudaTiempo(objPlayer, _t);
+		if _restante > 0{
+			var _color = scrAyudaColor(_t);
+			var _yf = HUD_MARGEN + HUD_AYUDA_Y0 + _fila * HUD_AYUDA_FILA;
+			var _xi = room_width - HUD_MARGEN - 20;
+			var _xb2 = _xi - 30;
+			var _xb1 = _xb2 - HUD_AYUDA_BARRA_ANCHO;
+			draw_sprite_ext(scrAyudaSprite(_t), 0, _xi, _yf, 0.8, 0.8, 0, _color, 1);
+			draw_set_halign(fa_right);
+			draw_set_valign(fa_bottom);
+			draw_set_color(_color);
+			draw_text(_xb2, _yf - 2, scrAyudaNombre(_t));
+			draw_rectangle(_xb1, _yf + 2, _xb2, _yf + 2 + HUD_AYUDA_BARRA_ALTO, true);
+			draw_rectangle(_xb1, _yf + 2, _xb1 + HUD_AYUDA_BARRA_ANCHO * (_restante / AYUDA_DURACION), _yf + 2 + HUD_AYUDA_BARRA_ALTO, false);
+			_fila += 1;
+		}
+	}
+	draw_set_color(c_white);
+}
+
 // Carteles del nivel
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);

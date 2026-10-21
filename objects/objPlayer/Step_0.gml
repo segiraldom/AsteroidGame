@@ -6,6 +6,17 @@ if invulnerabilidad > 0{
 	image_alpha = 1;
 }
 
+//Duración de las ayudas
+if ayuda_escudo > 0{
+	ayuda_escudo -= 1;
+}
+if ayuda_multi > 0{
+	ayuda_multi -= 1;
+}
+if ayuda_dano > 0{
+	ayuda_dano -= 1;
+}
+
 //Movimiento (flechas o WASD)
 if keyboard_check(vk_up) || keyboard_check(ord("W")){
 	motion_add(image_angle, JUGADOR_ACELERACION);
@@ -37,9 +48,21 @@ if (mouse_check_button(mb_left) || keyboard_check(vk_space)) && espera_disparo <
 	// La bala nace en la punta de la nave
 	var _x = x + lengthdir_x(BALA_DISTANCIA_PUNTA, image_angle);
 	var _y = y + lengthdir_y(BALA_DISTANCIA_PUNTA, image_angle);
-	var _bala = instance_create_layer(_x, _y, "Instances", objBullet);
-	_bala.direction = image_angle;
-	_bala.image_angle = image_angle;
+	// Disparo múltiple: 3 balas en abanico; si no, una sola al frente
+	var _desvios = (ayuda_multi > 0) ? [-MULTI_ANGULO, 0, MULTI_ANGULO] : [0];
+	for (var i = 0; i < array_length(_desvios); i++){
+		var _bala = instance_create_layer(_x, _y, "Instances", objBullet);
+		_bala.direction = image_angle + _desvios[i];
+		_bala.image_angle = _bala.direction;
+		if ayuda_dano > 0{
+			// Más daño: bala roja y más grande
+			_bala.dano_extra = true;
+			_bala.sprite_index = sprBulletDano;
+			_bala.image_blend = COLOR_AYUDA_DANO;
+		}else if ayuda_multi > 0{
+			_bala.image_blend = COLOR_AYUDA_MULTI;
+		}
+	}
 	espera_disparo = JUGADOR_CADENCIA;
 }
 

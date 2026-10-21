@@ -6,3 +6,8 @@ espera_disparo = 0;
 
 // Frames que quedan de invulnerabilidad (0 = vulnerable)
 invulnerabilidad = 0;
+
+// Frames que quedan de cada ayuda (0 = inactiva)
+ayuda_escudo = 0;
+ayuda_multi = 0;
+ayuda_dano = 0;
