@@ -32,3 +32,12 @@
 
 // --- HUD ---
 #macro HUD_MARGEN 20                // separación del HUD con el borde de la pantalla
+
+// --- Tiempo ---
+#macro FPS_JUEGO 60                          // fotogramas por segundo (igual que Game Options)
+
+// --- Vidas y game over ---
+#macro JUGADOR_INVULNERABILIDAD (3 * FPS_JUEGO)  // frames sin daño tras perder una vida (3 s)
+#macro JUGADOR_PARPADEO 8                    // frames por ciclo de parpadeo al ser invulnerable
+#macro GAMEOVER_ESPERA (6 * FPS_JUEGO)       // frames antes de volver solo al menú (6 s)
+#macro GAMEOVER_GRACIA (FPS_JUEGO / 2)       // frames antes de permitir saltar la pantalla

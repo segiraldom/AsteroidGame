@@ -1,3 +1,11 @@
+//Invulnerabilidad temporal tras perder una vida (la nave parpadea)
+if invulnerabilidad > 0{
+	invulnerabilidad -= 1;
+	image_alpha = (invulnerabilidad mod JUGADOR_PARPADEO < JUGADOR_PARPADEO / 2) ? 0.3 : 1;
+}else{
+	image_alpha = 1;
+}
+
 //Movimiento (flechas o WASD)
 if keyboard_check(vk_up) || keyboard_check(ord("W")){
 	motion_add(image_angle, JUGADOR_ACELERACION);
