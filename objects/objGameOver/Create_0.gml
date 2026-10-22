@@ -1,3 +1,6 @@
+// Música del menú en la pantalla final
+scrMusica(MUSICA_MENU);
+
 // Dibujar por encima de todo
 depth = -100;
 

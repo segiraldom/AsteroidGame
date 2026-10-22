@@ -16,6 +16,7 @@ if keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W")){
 // El modo de juego se cambia con izquierda / derecha mientras está seleccionado
 if seleccion == MENU_MODO && (keyboard_check_pressed(vk_left) || keyboard_check_pressed(vk_right)){
 	scrAlternarModo();
+	scrClic();
 }
 
 // Ratón: qué botón está bajo el cursor (-1 si ninguno)
@@ -39,6 +40,7 @@ var _activar = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_spa
 	|| (mouse_check_button_pressed(mb_left) && _hover >= 0);
 
 if _activar{
+	scrClic();
 	if _hover >= 0 && mouse_check_button_pressed(mb_left){
 		seleccion = _hover;
 	}

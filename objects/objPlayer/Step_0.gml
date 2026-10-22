@@ -59,6 +59,8 @@ if _disparando && espera_disparo <= 0{
 	// La bala nace en la punta de la nave
 	var _x = x + lengthdir_x(BALA_DISTANCIA_PUNTA, image_angle);
 	var _y = y + lengthdir_y(BALA_DISTANCIA_PUNTA, image_angle);
+	// Un solo sonido por disparo, aunque salgan 3 balas
+	scrSonido(sndDisparo, VOL_DISPARO);
 	// Disparo múltiple: 3 balas en abanico; si no, una sola al frente
 	var _desvios = (ayuda_multi > 0) ? [-MULTI_ANGULO, 0, MULTI_ANGULO] : [0];
 	for (var i = 0; i < array_length(_desvios); i++){

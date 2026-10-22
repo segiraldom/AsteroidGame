@@ -1,6 +1,9 @@
 // La pausa solo existe durante la partida; en el menú siempre está apagada
 global.pausa = false;
 
+// Música del menú (sigue sonando si ya estaba)
+scrMusica(MUSICA_MENU);
+
 // Dibujar por encima de las rocas decorativas
 depth = -100;
 

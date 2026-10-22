@@ -3,6 +3,9 @@ depth = -50;
 
 tiempo = 0;
 
+// Sonido de la explosión
+scrSonidoExplosion();
+
 // Fragmentos de la nave que salen despedidos en todas direcciones
 var _px = x;
 var _py = y;

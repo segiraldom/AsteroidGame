@@ -56,6 +56,7 @@ if keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || _clic
 	if _clic{
 		seleccion = _hover;
 	}
+	scrClic();
 	if _en_confirmacion{
 		if seleccion == 0{
 			// SÍ: se ejecuta la salida

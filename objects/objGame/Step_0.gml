@@ -8,6 +8,9 @@ if global.pausa{
 	exit;
 }
 
+// Si terminó una pista de batalla, empieza otra
+scrMusicaActualizar();
+
 // Control del nivel
 if temporizador > 0{
 	temporizador -= 1;

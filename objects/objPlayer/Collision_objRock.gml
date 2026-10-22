@@ -12,6 +12,7 @@ if global.vidas <= 0{
 if ayuda_escudo > 0{
 	ayuda_escudo = 0;
 	invulnerabilidad = ESCUDO_ROMPE_INVULN;
+	scrSonido(sndChoque, VOL_CHOQUE);
 	with (other){
 		instance_destroy();
 	}

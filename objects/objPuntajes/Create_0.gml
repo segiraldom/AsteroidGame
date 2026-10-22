@@ -1,3 +1,6 @@
+// Música del menú (sigue sonando sin cortarse)
+scrMusica(MUSICA_MENU);
+
 // Dibujar por encima de todo
 depth = -100;
 

@@ -81,6 +81,9 @@ if scrMultijugador(){
 global.puntaje_nivel = global.puntaje;
 global.vidas_nivel = global.vidas;
 
+// Música: la del jefe en niveles de jefe, si no pistas de batalla al azar
+scrMusica(es_jefe ? MUSICA_JEFE : MUSICA_BATALLA);
+
 // Menú de pausa (Esc)
 global.pausa = false;
 instance_create_layer(0, 0, "Instances", objPausa);

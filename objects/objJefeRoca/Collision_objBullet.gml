@@ -4,6 +4,7 @@ instance_destroy(other);
 
 vida -= _dano;
 flash = JEFE_FLASH;
+scrSonido(sndChoque, VOL_CHOQUE);
 global.puntaje += JEFE_PUNTOS_IMPACTO;
 
 if vida <= 0{

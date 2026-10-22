@@ -4,6 +4,10 @@
 /// Las velocidades se guardan para devolverlas al reanudar.
 function scrPausar(){
 	global.pausa = true;
+	// La música se pausa y sigue desde donde iba al reanudar
+	if variable_global_exists("musica"){
+		audio_pause_sound(global.musica);
+	}
 	with (all){
 		if speed != 0{
 			pausa_vel = speed;
@@ -20,6 +24,9 @@ function scrReanudar(){
 			speed = pausa_vel;
 			pausa_vel = 0;
 		}
+	}
+	if variable_global_exists("musica"){
+		audio_resume_sound(global.musica);
 	}
 	global.pausa = false;
 }
@@ -41,6 +48,10 @@ function scrPausaTexto(_opcion){
 function scrReiniciarNivel(){
 	global.puntaje = global.puntaje_nivel;
 	global.vidas = global.vidas_nivel;
+	// La música sigue sonando en el nivel reiniciado
+	if variable_global_exists("musica"){
+		audio_resume_sound(global.musica);
+	}
 	global.pausa = false;
 	room_restart();
 }

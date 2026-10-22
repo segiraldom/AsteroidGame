@@ -45,6 +45,7 @@ function scrJefeGolpeaNave(_nave){
 		if ayuda_escudo > 0{
 			ayuda_escudo = 0;
 			invulnerabilidad = ESCUDO_ROMPE_INVULN;
+			scrSonido(sndChoque, VOL_CHOQUE);
 			exit;
 		}
 		global.vidas -= 1;

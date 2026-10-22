@@ -8,6 +8,7 @@ tiempo += 1;
 if confirmando{
 	// Enter confirma el borrado, Esc lo cancela
 	if keyboard_check_pressed(vk_enter){
+		scrClic();
 		scrTopsBorrar();
 		confirmando = false;
 	}else if keyboard_check_pressed(vk_escape){
@@ -20,6 +21,7 @@ if confirmando{
 	}else if tiempo > GAMEOVER_GRACIA
 		&& (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left)){
 		// Volver al menú con Esc, Enter, Espacio o clic
+		scrClic();
 		room_goto(rmMenu);
 	}
 }

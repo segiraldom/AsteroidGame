@@ -210,3 +210,21 @@ enum eAccionJefe {
 #macro PAUSA_BOTON_SEPARACION 14             // espacio entre botones
 #macro PAUSA_Y_INICIO 0.3                    // altura del primer botón (fracción de la altura de la sala)
 #macro PAUSA_OSCURECER 0.7                   // opacidad del fondo oscuro (0 a 1)
+
+// --- Sonido (volúmenes de 0 a 1) ---
+#macro VOL_MUSICA_MENU 0.3                   // música del menú y de los puntajes
+#macro VOL_MUSICA_BATALLA 0.25               // música de los niveles normales
+#macro VOL_MUSICA_JEFE 0.4                   // música de los niveles de jefe
+#macro VOL_CLIC 0.7                          // clic de los botones
+#macro VOL_DISPARO 0.35                      // disparo de la nave
+#macro VOL_EXPLOSION 0.7                     // explosiones
+#macro VOL_CHOQUE 0.6                        // impactos (bala en jefe o roca resistente, escudo)
+#macro PRIORIDAD_MUSICA 1                    // prioridad baja: la música cede ante los efectos
+#macro PRIORIDAD_EFECTO 10                   // prioridad alta
+#macro EXPLOSION_SONIDO_ESPERA 100           // milisegundos mínimos entre dos sonidos de explosión
+
+// Tipos de música
+#macro MUSICA_NINGUNA 0
+#macro MUSICA_MENU 1
+#macro MUSICA_BATALLA 2
+#macro MUSICA_JEFE 3
