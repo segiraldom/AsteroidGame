@@ -1,3 +1,8 @@
+// En pausa no avanza ni caduca
+if global.pausa{
+	exit;
+}
+
 latido += 1;
 
 // Desaparece si nadie la recoge

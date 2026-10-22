@@ -1,3 +1,6 @@
+// La pausa solo existe durante la partida; en el menú siempre está apagada
+global.pausa = false;
+
 // Dibujar por encima de las rocas decorativas
 depth = -100;
 

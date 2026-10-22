@@ -197,3 +197,16 @@ enum eAccionJefe {
 	TEMBLOR,
 	EMBESTIDA
 }
+
+// --- Menú de pausa (Esc) ---
+#macro PAUSA_CONTINUAR 0                     // volver a la partida
+#macro PAUSA_REINICIAR 1                     // reiniciar el nivel con el puntaje y las vidas con que empezó
+#macro PAUSA_PANTALLA 2                      // alternar pantalla completa / ventana
+#macro PAUSA_MENU 3                          // abandonar la partida y volver al menú
+#macro PAUSA_SALIR 4                         // cerrar el juego
+#macro PAUSA_TOTAL 5                         // cantidad de opciones
+#macro PAUSA_BOTON_ANCHO 360                 // ancho de cada botón
+#macro PAUSA_BOTON_ALTO 54                   // alto de cada botón
+#macro PAUSA_BOTON_SEPARACION 14             // espacio entre botones
+#macro PAUSA_Y_INICIO 0.3                    // altura del primer botón (fracción de la altura de la sala)
+#macro PAUSA_OSCURECER 0.7                   // opacidad del fondo oscuro (0 a 1)

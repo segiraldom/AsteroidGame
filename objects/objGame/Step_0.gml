@@ -3,6 +3,11 @@ if keyboard_check_pressed(vk_f11){
 	scrAlternarPantallaCompleta();
 }
 
+// En pausa se congela el nivel (cronómetro incluido)
+if global.pausa{
+	exit;
+}
+
 // Control del nivel
 if temporizador > 0{
 	temporizador -= 1;

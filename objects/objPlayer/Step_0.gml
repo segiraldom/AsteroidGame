@@ -1,3 +1,8 @@
+// En pausa no se mueve ni dispara
+if global.pausa{
+	exit;
+}
+
 //Invulnerabilidad temporal tras perder una vida (la nave parpadea)
 if invulnerabilidad > 0{
 	invulnerabilidad -= 1;

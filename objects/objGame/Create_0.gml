@@ -76,6 +76,15 @@ if scrMultijugador(){
 	_p2.image_angle = 90;
 }
 
+// Puntaje y vidas con que empieza el nivel: es lo que se restaura al reiniciarlo desde la pausa
+// (así reiniciar no sirve para acumular puntos)
+global.puntaje_nivel = global.puntaje;
+global.vidas_nivel = global.vidas;
+
+// Menú de pausa (Esc)
+global.pausa = false;
+instance_create_layer(0, 0, "Instances", objPausa);
+
 // Empieza con el cartel de "NIVEL N"
 estado = eEstadoNivel.INTRO;
 temporizador = NIVEL_INTRO;

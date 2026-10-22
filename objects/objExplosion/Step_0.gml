@@ -1,3 +1,8 @@
+// En pausa la explosión se queda congelada
+if global.pausa{
+	exit;
+}
+
 tiempo += 1;
 
 // Mover y girar cada fragmento, frenando poco a poco

@@ -1,3 +1,8 @@
+// En pausa no se mueve ni ataca
+if global.pausa{
+	exit;
+}
+
 if flash > 0{
 	flash -= 1;
 }
