@@ -157,3 +157,43 @@ enum eFaseFinal {
 	NOMBRE,
 	LISTA
 }
+
+// --- Jefe del nivel 5: roca gigante ---
+#macro NIVEL_JEFE_1 5                        // nivel en el que aparece la roca gigante (para probar: poner 1)
+#macro JEFE_ROCA_VIDA 40                     // impactos que aguanta con 1 jugador
+#macro JEFE_VIDA_FACTOR_2J 1.6               // la vida se multiplica por esto con 2 jugadores
+#macro JEFE_DANO_FUERTE 3                    // daño de una bala de "más daño"
+#macro JEFE_PUNTOS_IMPACTO 10                // puntos por cada impacto
+#macro JEFE_PUNTOS_DERROTA 1000              // puntos por derrotarlo
+#macro JEFE_BONO_FACTOR 2                    // en nivel de jefe los límites del bono por tiempo se multiplican por esto
+#macro JEFE_ESCALA 2                         // tamaño respecto a la roca grande
+#macro JEFE_Y_INICIO 180                     // altura donde aparece el jefe (arriba)
+#macro JEFE_NAVE_Y_BORDE 110                 // en nivel de jefe las naves empiezan a esta distancia del borde inferior
+#macro JEFE_GIRO 0.3                         // giro por frame (grados)
+#macro JEFE_VELOCIDAD 1                      // velocidad de deriva en la fase 1
+#macro JEFE_FASE_2_VIDA 0.6                  // la fase 2 empieza al quedar este % de vida
+#macro JEFE_FASE_3_VIDA 0.3                  // la fase 3 empieza al quedar este % de vida
+#macro JEFE_FASE_2_VEL 1.5                   // multiplicador de velocidad desde la fase 2
+#macro JEFE_ESPERA_F1 (4 * FPS_JUEGO)        // frames entre ataques en la fase 1
+#macro JEFE_ESPERA_F2 (3 * FPS_JUEGO)        // frames entre ataques en la fase 2
+#macro JEFE_ESPERA_F3 (5 * FPS_JUEGO)        // frames entre ataques en la fase 3
+#macro JEFE_ABANICO 25                       // grados entre rocas del abanico (fase 2)
+#macro JEFE_MAX_LANZADAS 6                   // máximo de rocas en pantalla para lanzar más
+#macro JEFE_VEL_LANZADA 3                    // velocidad de las rocas lanzadas
+#macro JEFE_ESPERA_EMBESTIDA (6 * FPS_JUEGO) // frames entre embestidas (fase 3)
+#macro JEFE_TEMBLOR_DURACION FPS_JUEGO       // frames que tiembla antes de embestir
+#macro JEFE_EMBESTIDA_DURACION 40            // frames que dura la embestida
+#macro JEFE_EMBESTIDA_VEL 7                  // velocidad de la embestida
+#macro JEFE_TEMBLOR_FUERZA 5                 // píxeles de temblor
+#macro JEFE_FLASH 4                          // frames de parpadeo blanco al recibir un disparo
+#macro JEFE_BARRA_ANCHO 500                  // ancho de la barra de vida
+#macro JEFE_BARRA_ALTO 14                    // alto de la barra de vida
+#macro JEFE_BARRA_Y 110                      // altura de la barra de vida
+#macro JEFE_EXPLOSIONES 8                    // explosiones al derrotarlo
+
+// Qué está haciendo el jefe
+enum eAccionJefe {
+	DERIVA,
+	TEMBLOR,
+	EMBESTIDA
+}

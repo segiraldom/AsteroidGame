@@ -4,6 +4,10 @@
 /// Los límites de tiempo crecen un poco con el nivel (los niveles altos son más largos).
 function scrBonoTiempo(_frames, _nivel){
 	var _factor = 1 + BONO_CRECIMIENTO_NIVEL * (_nivel - 1);
+	// En los niveles de jefe se tarda más: los límites se multiplican
+	if scrEsNivelJefe(_nivel){
+		_factor *= JEFE_BONO_FACTOR;
+	}
 	var _segundos = _frames / FPS_JUEGO;
 
 	if _segundos < BONO_TIEMPO_1 * _factor{

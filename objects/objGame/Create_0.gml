@@ -16,8 +16,11 @@ with (objRock){
 	instance_destroy();
 }
 
+// En los niveles de jefe no hay rocas normales: solo el jefe
+es_jefe = scrEsNivelJefe(global.nivel);
+
 // Generar las rocas del nivel, lejos de la nave
-var _cantidad = scrCantidadRocas(global.nivel);
+var _cantidad = es_jefe ? 0 : scrCantidadRocas(global.nivel);
 var _centro_x = room_width / 2;
 var _centro_y = room_height / 2;
 
@@ -48,19 +51,26 @@ repeat (_cantidad){
 	}
 }
 
+// Jefe del nivel 5
+if es_jefe{
+	instance_create_layer(_centro_x, JEFE_Y_INICIO, "Instances", objJefeRoca);
+}
+
 // Colocar las naves en el centro, mirando hacia arriba.
 // En modo 2 jugadores van una a cada lado para que no se estorben al empezar.
 var _separacion = scrMultijugador() ? JUGADOR_2_DESPLAZAMIENTO_X : 0;
+// En nivel de jefe las naves empiezan abajo, lejos del jefe
+var _nave_y = es_jefe ? room_height - JEFE_NAVE_Y_BORDE : _centro_y;
 if instance_exists(objPlayer){
 	objPlayer.x = _centro_x - _separacion;
-	objPlayer.y = _centro_y;
+	objPlayer.y = _nave_y;
 	objPlayer.speed = 0;
 	objPlayer.image_angle = 90;
 }
 
 // Segunda nave del modo 2 jugadores
 if scrMultijugador(){
-	var _p2 = instance_create_layer(_centro_x + _separacion, _centro_y, "Instances", objPlayer);
+	var _p2 = instance_create_layer(_centro_x + _separacion, _nave_y, "Instances", objPlayer);
 	scrConfigurarJugador(_p2, 2);
 	// Mira hacia arriba, igual que la primera nave
 	_p2.image_angle = 90;

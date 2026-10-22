@@ -52,11 +52,14 @@ with (objPlayer){
 }
 draw_set_color(c_white);
 
+// Barra de vida del jefe
+scrDibujarBarraJefe();
+
 // Carteles del nivel
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 if estado == eEstadoNivel.INTRO{
-	draw_text_transformed(room_width / 2, room_height * 0.35, "NIVEL " + string(global.nivel), 4, 4, 0);
+	draw_text_transformed(room_width / 2, room_height * 0.35, es_jefe ? "¡JEFE!" : "NIVEL " + string(global.nivel), 4, 4, 0);
 }else if estado == eEstadoNivel.COMPLETADO{
 	draw_text_transformed(room_width / 2, room_height * 0.35, "NIVEL COMPLETADO", 3, 3, 0);
 	draw_text_transformed(room_width / 2, room_height * 0.35 + 70, "TIEMPO: " + scrFormatoTiempo(tiempo_nivel), 2, 2, 0);
