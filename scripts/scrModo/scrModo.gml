@@ -20,6 +20,7 @@ function scrModoNombre(){
 function scrMenuTexto(_opcion){
 	switch (_opcion){
 		case MENU_MODO: return "MODO DE JUEGO: " + scrModoNombre();
+		case MENU_PUNTAJES: return "PUNTAJES";
 		case MENU_SALIR: return "SALIR";
 	}
 	return "JUGAR";

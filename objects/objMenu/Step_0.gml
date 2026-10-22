@@ -50,6 +50,9 @@ if _activar{
 			scrIniciarPartida();
 			room_goto(Room1);
 			break;
+		case MENU_PUNTAJES:
+			room_goto(rmPuntajes);
+			break;
 		case MENU_SALIR: game_end(); break;
 	}
 }

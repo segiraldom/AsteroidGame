@@ -1,7 +1,7 @@
 // Dibujar por encima de las rocas decorativas
 depth = -100;
 
-opciones = [MENU_JUGAR, MENU_MODO, MENU_SALIR];
+opciones = [MENU_JUGAR, MENU_MODO, MENU_PUNTAJES, MENU_SALIR];
 seleccion = MENU_JUGAR;
 
 // El modo elegido se queda guardado entre partidas
@@ -17,7 +17,7 @@ mouse_previo_y = mouse_y;
 botones = [];
 for (var i = 0; i < array_length(opciones); i++){
 	var _x1 = room_width / 2 - MENU_BOTON_ANCHO / 2;
-	var _y1 = room_height * 0.55 + i * (MENU_BOTON_ALTO + MENU_BOTON_SEPARACION);
+	var _y1 = room_height * MENU_Y_INICIO + i * (MENU_BOTON_ALTO + MENU_BOTON_SEPARACION);
 	array_push(botones, {
 		x1: _x1,
 		y1: _y1,

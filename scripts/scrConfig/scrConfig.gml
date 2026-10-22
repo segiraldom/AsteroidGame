@@ -29,7 +29,9 @@
 // Opciones del menú principal
 #macro MENU_JUGAR 0                 // empezar la partida
 #macro MENU_MODO 1                  // cambiar entre 1 y 2 jugadores
-#macro MENU_SALIR 2                 // cerrar el juego
+#macro MENU_PUNTAJES 2              // ver los mejores puntajes
+#macro MENU_SALIR 3                 // cerrar el juego
+#macro MENU_Y_INICIO 0.4            // altura del primer botón (fracción de la altura de la sala)
 
 // --- Modo de juego ---
 #macro MODO_1J 1                    // un jugador

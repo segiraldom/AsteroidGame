@@ -47,6 +47,13 @@ function scrTopsGuardar(){
 	ini_close();
 }
 
+/// Borra todos los puntajes y reinicia los contadores de nombres genéricos (y lo guarda)
+function scrTopsBorrar(){
+	global.tops = [[], []];
+	global.anonimos = [0, 0];
+	scrTopsGuardar();
+}
+
 /// Puesto (empezando en 0) que ocuparía un puntaje en el top del modo, o -1 si no entra.
 /// En un empate queda arriba el que llegó primero.
 function scrTopsPosicion(_modo, _puntaje){
