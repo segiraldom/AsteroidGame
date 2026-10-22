@@ -10,7 +10,10 @@
   "managed":true,
   "name":"objPowerUp",
   "overriddenProperties":[],
-  "parent":{"name":"AsteroidGame","path":"AsteroidGame.yyp",},
+  "parent":{
+    "name":"Objects",
+    "path":"folders/Objects.yy",
+  },
   "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -29,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{"name":"sprPowerEscudo","path":"sprites/sprPowerEscudo/sprPowerEscudo.yy",},
+  "spriteId":{
+    "name":"sprPowerEscudo",
+    "path":"sprites/sprPowerEscudo/sprPowerEscudo.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

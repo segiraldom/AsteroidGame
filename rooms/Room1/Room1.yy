@@ -25,8 +25,8 @@
   ],
   "name":"Room1",
   "parent":{
-    "name":"AsteroidGame",
-    "path":"AsteroidGame.yyp",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

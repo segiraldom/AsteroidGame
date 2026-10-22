@@ -9,8 +9,8 @@
   "name":"objBullet",
   "overriddenProperties":[],
   "parent":{
-    "name":"AsteroidGame",
-    "path":"AsteroidGame.yyp",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -11,7 +11,10 @@
   "managed":true,
   "name":"objJefeRoca",
   "overriddenProperties":[],
-  "parent":{"name":"AsteroidGame","path":"AsteroidGame.yyp",},
+  "parent":{
+    "name":"Objects",
+    "path":"folders/Objects.yy",
+  },
   "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -30,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{"name":"sprRockBig","path":"sprites/sprRockBig/sprRockBig.yy",},
+  "spriteId":{
+    "name":"sprRockBig",
+    "path":"sprites/sprRockBig/sprRockBig.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

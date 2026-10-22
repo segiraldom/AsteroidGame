@@ -9,7 +9,10 @@
   "managed":true,
   "name":"objPuntajes",
   "overriddenProperties":[],
-  "parent":{"name":"AsteroidGame","path":"AsteroidGame.yyp",},
+  "parent":{
+    "name":"Objects",
+    "path":"folders/Objects.yy",
+  },
   "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
