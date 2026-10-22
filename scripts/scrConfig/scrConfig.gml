@@ -114,10 +114,10 @@ enum eEstadoNivel {
 #macro COLOR_AYUDA_VIDA make_colour_rgb(255, 215, 60)     // amarillo
 #macro VIDAS_MAX 5                           // máximo de vidas acumuladas con 1 jugador
 #macro VIDAS_MAX_2J 7                        // máximo de vidas acumuladas con 2 jugadores
-#macro AYUDA_PROB_VIDA 0.2                // probabilidad de que una aparición sea vida extra (si se puede)
+#macro AYUDA_PROB_VIDA 0.2                   // probabilidad de que una aparición sea vida extra (si se puede)
 #macro AYUDA_DURACION (10 * FPS_JUEGO)       // frames que dura cada ayuda al recogerla (10 s)
-#macro AYUDA_ESPERA_MIN (15 * FPS_JUEGO)     // espera mínima entre apariciones (15 s)
-#macro AYUDA_ESPERA_MAX (20 * FPS_JUEGO)     // espera máxima entre apariciones (20 s)
+#macro AYUDA_ESPERA_MIN (5 * FPS_JUEGO)      // espera mínima entre apariciones (5 s)
+#macro AYUDA_ESPERA_MAX (12 * FPS_JUEGO)     // espera máxima entre apariciones (12 s)
 #macro AYUDA_VIDA_PANTALLA (12 * FPS_JUEGO)  // frames que una ayuda flota antes de desaparecer
 #macro AYUDA_PARPADEO_INICIO (3 * FPS_JUEGO) // frames finales en los que parpadea (ayuda flotante y escudo)
 #macro AYUDA_VELOCIDAD 0.6                   // velocidad con la que flota
@@ -134,9 +134,9 @@ enum eEstadoNivel {
 #macro HUD_AYUDA_BARRA_ALTO 8                // alto de la barra de tiempo
 
 // --- Bono por tiempo al completar un nivel ---
-#macro BONO_TIEMPO_1 60                      // segundos del nivel 1 para el bono máximo (menos de 1 min)
-#macro BONO_TIEMPO_2 120                     // segundos del nivel 1 para el segundo bono (menos de 2 min)
-#macro BONO_TIEMPO_3 240                     // segundos del nivel 1 para el tercer bono (menos de 4 min)
+#macro BONO_TIEMPO_1 15                      // segundos del nivel 1 para el bono máximo (menos de 1 min)
+#macro BONO_TIEMPO_2 30                      // segundos del nivel 1 para el segundo bono (menos de 2 min)
+#macro BONO_TIEMPO_3 60                      // segundos del nivel 1 para el tercer bono (menos de 4 min)
 #macro BONO_PUNTOS_1 500                     // puntos extra del primer tramo
 #macro BONO_PUNTOS_2 200                     // puntos extra del segundo tramo
 #macro BONO_PUNTOS_3 100                     // puntos extra del tercer tramo
