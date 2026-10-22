@@ -57,7 +57,6 @@
 // --- Vidas y game over ---
 #macro JUGADOR_INVULNERABILIDAD (3 * FPS_JUEGO)  // frames sin daño tras perder una vida (3 s)
 #macro JUGADOR_PARPADEO 8                    // frames por ciclo de parpadeo al ser invulnerable
-#macro GAMEOVER_ESPERA (6 * FPS_JUEGO)       // frames antes de volver solo al menú (6 s)
 #macro GAMEOVER_GRACIA (FPS_JUEGO / 2)       // frames antes de permitir saltar la pantalla
 
 // --- Niveles ---
@@ -141,3 +140,18 @@ enum eEstadoNivel {
 #macro BONO_PUNTOS_2 200                     // puntos extra del segundo tramo
 #macro BONO_PUNTOS_3 100                     // puntos extra del tercer tramo
 #macro BONO_CRECIMIENTO_NIVEL 0.1            // los límites de tiempo crecen este % por cada nivel (0.1 = 10 %)
+
+// --- Mejores puntajes (tops) ---
+#macro TOP_MAX 10                            // puestos de cada top
+#macro TOP_ARCHIVO "puntajes.ini"            // archivo de guardado (en la carpeta de guardado del juego)
+#macro NOMBRE_MAX 12                         // letras máximas de un nombre
+#macro NOMBRE_INACTIVIDAD (30 * FPS_JUEGO)   // frames sin tocar nada antes de guardar solo con nombre genérico (30 s)
+#macro TOP_ESPERA_LISTA (12 * FPS_JUEGO)     // frames que se ve la lista antes de volver al menú (12 s)
+#macro TOPS_ANCHO 520                        // ancho de la lista del top
+#macro TOPS_FILA 34                          // alto de cada fila de la lista
+
+// Fases de la pantalla final
+enum eFaseFinal {
+	NOMBRE,
+	LISTA
+}
