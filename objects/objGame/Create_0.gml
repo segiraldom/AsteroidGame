@@ -17,7 +17,7 @@ with (objRock){
 }
 
 // Generar las rocas del nivel, lejos de la nave
-var _cantidad = ROCAS_BASE + floor(global.nivel / ROCAS_NIVELES_POR_EXTRA);
+var _cantidad = scrCantidadRocas(global.nivel);
 var _centro_x = room_width / 2;
 var _centro_y = room_height / 2;
 
@@ -62,6 +62,8 @@ if instance_exists(objPlayer){
 if scrMultijugador(){
 	var _p2 = instance_create_layer(_centro_x + _separacion, _centro_y, "Instances", objPlayer);
 	scrConfigurarJugador(_p2, 2);
+	// Mira hacia arriba, igual que la primera nave
+	_p2.image_angle = 90;
 }
 
 // Empieza con el cartel de "NIVEL N"

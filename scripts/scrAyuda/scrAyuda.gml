@@ -56,6 +56,6 @@ function scrDarAyuda(_jugador, _tipo){
 		case AYUDA_ESCUDO: _jugador.ayuda_escudo = AYUDA_DURACION; break;
 		case AYUDA_MULTI: _jugador.ayuda_multi = AYUDA_DURACION; break;
 		case AYUDA_DANO: _jugador.ayuda_dano = AYUDA_DURACION; break;
-		case AYUDA_VIDA: global.vidas = min(VIDAS_MAX, global.vidas + 1); break;
+		case AYUDA_VIDA: global.vidas = min(scrVidasMax(), global.vidas + 1); break;
 	}
 }

@@ -33,3 +33,21 @@ function scrControlesAyuda(){
 	}
 	return "Mover: flechas / WASD   |   Disparar: clic / Espacio   |   " + _pantalla;
 }
+
+/// Vidas con las que empieza una partida (en 2 jugadores son compartidas)
+function scrVidasIniciales(){
+	return scrMultijugador() ? VIDAS_INICIALES_2J : VIDAS_INICIALES;
+}
+
+/// Máximo de vidas que se pueden acumular
+function scrVidasMax(){
+	return scrMultijugador() ? VIDAS_MAX_2J : VIDAS_MAX;
+}
+
+/// Rocas grandes que tiene un nivel (con 2 jugadores hay más)
+function scrCantidadRocas(_nivel){
+	if scrMultijugador(){
+		return ROCAS_BASE_2J + floor(_nivel * ROCAS_POR_NIVEL_2J);
+	}
+	return ROCAS_BASE + floor(_nivel / ROCAS_NIVELES_POR_EXTRA);
+}

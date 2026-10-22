@@ -43,7 +43,8 @@
 #macro COLOR_JUGADOR_2 make_colour_rgb(140, 200, 255)   // celeste, para distinguir las naves
 
 // --- Partida y puntaje ---
-#macro VIDAS_INICIALES 3            // vidas al empezar una partida
+#macro VIDAS_INICIALES 3            // vidas al empezar una partida de 1 jugador
+#macro VIDAS_INICIALES_2J 5         // vidas compartidas al empezar una partida de 2 jugadores
 #macro PUNTOS_ROCA_GRANDE 20        // puntos al partir una roca grande
 #macro PUNTOS_ROCA_PEQUENA 50       // puntos al destruir una roca pequeña
 
@@ -63,6 +64,8 @@
 #macro NIVELES_TOTAL 10                      // niveles hasta la victoria
 #macro ROCAS_BASE 2                          // rocas grandes del nivel 1
 #macro ROCAS_NIVELES_POR_EXTRA 2             // cada cuántos niveles se suma una roca grande más
+#macro ROCAS_BASE_2J 3                       // rocas grandes del nivel 1 con 2 jugadores
+#macro ROCAS_POR_NIVEL_2J 0.6                // rocas grandes extra por nivel con 2 jugadores (llega a 9 en el nivel 10)
 #macro ROCA_VELOCIDAD_POR_NIVEL 0.25         // velocidad extra de las rocas por cada nivel
 #macro ROCA_DISTANCIA_MIN_NAVE 250           // distancia mínima entre la nave y las rocas al empezar
 #macro NIVEL_INTRO (2 * FPS_JUEGO)           // frames del cartel "NIVEL N" (la nave es invulnerable)
@@ -109,10 +112,11 @@ enum eEstadoNivel {
 #macro COLOR_AYUDA_MULTI make_colour_rgb(80, 220, 110)    // verde
 #macro COLOR_AYUDA_DANO make_colour_rgb(255, 70, 70)      // rojo
 #macro COLOR_AYUDA_VIDA make_colour_rgb(255, 215, 60)     // amarillo
-#macro VIDAS_MAX 4                           // máximo de vidas acumuladas
+#macro VIDAS_MAX 5                           // máximo de vidas acumuladas con 1 jugador
+#macro VIDAS_MAX_2J 7                        // máximo de vidas acumuladas con 2 jugadores
 #macro AYUDA_PROB_VIDA 0.2                // probabilidad de que una aparición sea vida extra (si se puede)
 #macro AYUDA_DURACION (10 * FPS_JUEGO)       // frames que dura cada ayuda al recogerla (10 s)
-#macro AYUDA_ESPERA_MIN (12 * FPS_JUEGO)     // espera mínima entre apariciones (15 s)
+#macro AYUDA_ESPERA_MIN (15 * FPS_JUEGO)     // espera mínima entre apariciones (15 s)
 #macro AYUDA_ESPERA_MAX (20 * FPS_JUEGO)     // espera máxima entre apariciones (20 s)
 #macro AYUDA_VIDA_PANTALLA (12 * FPS_JUEGO)  // frames que una ayuda flota antes de desaparecer
 #macro AYUDA_PARPADEO_INICIO (3 * FPS_JUEGO) // frames finales en los que parpadea (ayuda flotante y escudo)

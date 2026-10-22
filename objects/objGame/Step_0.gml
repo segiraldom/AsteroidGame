@@ -46,7 +46,7 @@ switch (estado){
 				var _ayuda = instance_create_layer(_ax, _ay, "Instances", objPowerUp);
 				var _tipo = irandom(AYUDA_TIPOS_TEMPORALES - 1);
 				// Vida extra: poco frecuente, una por nivel y nunca con el máximo de vidas
-				if !vida_extra_lanzada && global.vidas < VIDAS_MAX && random(1) < AYUDA_PROB_VIDA{
+				if !vida_extra_lanzada && global.vidas < scrVidasMax() && random(1) < AYUDA_PROB_VIDA{
 					_tipo = AYUDA_VIDA;
 					vida_extra_lanzada = true;
 				}
