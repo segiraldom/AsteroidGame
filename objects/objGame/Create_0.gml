@@ -75,3 +75,7 @@ ayuda_espera = irandom_range(AYUDA_ESPERA_MIN, AYUDA_ESPERA_MAX);
 
 // Solo puede aparecer una vida extra por nivel
 vida_extra_lanzada = false;
+
+// Cronómetro del nivel (frames jugados) y bono ganado al completarlo
+tiempo_nivel = 0;
+bono_nivel = 0;

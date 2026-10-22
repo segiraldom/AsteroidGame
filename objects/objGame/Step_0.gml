@@ -31,6 +31,9 @@ switch (estado){
 		break;
 
 	case eEstadoNivel.JUGANDO:
+		// El cronómetro solo corre mientras se juega (no en el cartel ni en la pausa final)
+		tiempo_nivel += 1;
+
 		// Cada cierto tiempo aparece una ayuda flotando (una a la vez)
 		ayuda_espera -= 1;
 		if ayuda_espera <= 0{
@@ -58,6 +61,9 @@ switch (estado){
 		if instance_number(objRock) == 0{
 			estado = eEstadoNivel.COMPLETADO;
 			temporizador = NIVEL_PAUSA_FIN;
+			// Bono según el tiempo que tardó en completar el nivel
+			bono_nivel = scrBonoTiempo(tiempo_nivel, global.nivel);
+			global.puntaje += bono_nivel;
 		}
 		break;
 

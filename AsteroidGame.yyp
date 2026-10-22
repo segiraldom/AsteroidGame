@@ -36,6 +36,7 @@
     {"id":{"name":"scrModo","path":"scripts/scrModo/scrModo.yy",},},
     {"id":{"name":"scrPantalla","path":"scripts/scrPantalla/scrPantalla.yy",},},
     {"id":{"name":"scrPartida","path":"scripts/scrPartida/scrPartida.yy",},},
+    {"id":{"name":"scrPuntaje","path":"scripts/scrPuntaje/scrPuntaje.yy",},},
     {"id":{"name":"scrRoca","path":"scripts/scrRoca/scrRoca.yy",},},
     {"id":{"name":"sprBullet","path":"sprites/sprBullet/sprBullet.yy",},},
     {"id":{"name":"sprBulletDano","path":"sprites/sprBulletDano/sprBulletDano.yy",},},

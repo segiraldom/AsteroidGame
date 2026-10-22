@@ -69,7 +69,7 @@
 #macro ROCA_VELOCIDAD_POR_NIVEL 0.25         // velocidad extra de las rocas por cada nivel
 #macro ROCA_DISTANCIA_MIN_NAVE 250           // distancia mínima entre la nave y las rocas al empezar
 #macro NIVEL_INTRO (2 * FPS_JUEGO)           // frames del cartel "NIVEL N" (la nave es invulnerable)
-#macro NIVEL_PAUSA_FIN (2 * FPS_JUEGO)       // frames de pausa tras limpiar el nivel
+#macro NIVEL_PAUSA_FIN (3 * FPS_JUEGO)       // frames de pausa tras limpiar el nivel (se ve el tiempo y el bono)
 
 // --- Tipos de roca ---
 #macro ROCA_NORMAL 0
@@ -132,3 +132,12 @@ enum eEstadoNivel {
 #macro HUD_AYUDA_FILA 36                     // separación vertical entre filas
 #macro HUD_AYUDA_BARRA_ANCHO 140             // ancho de la barra de tiempo
 #macro HUD_AYUDA_BARRA_ALTO 8                // alto de la barra de tiempo
+
+// --- Bono por tiempo al completar un nivel ---
+#macro BONO_TIEMPO_1 60                      // segundos del nivel 1 para el bono máximo (menos de 1 min)
+#macro BONO_TIEMPO_2 120                     // segundos del nivel 1 para el segundo bono (menos de 2 min)
+#macro BONO_TIEMPO_3 240                     // segundos del nivel 1 para el tercer bono (menos de 4 min)
+#macro BONO_PUNTOS_1 500                     // puntos extra del primer tramo
+#macro BONO_PUNTOS_2 200                     // puntos extra del segundo tramo
+#macro BONO_PUNTOS_3 100                     // puntos extra del tercer tramo
+#macro BONO_CRECIMIENTO_NIVEL 0.1            // los límites de tiempo crecen este % por cada nivel (0.1 = 10 %)

@@ -5,6 +5,11 @@ draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 draw_text_transformed(HUD_MARGEN, HUD_MARGEN, "PUNTAJE: " + string(global.puntaje), 1.5, 1.5, 0);
 
+// Tiempo del nivel y bono que se ganaría si se completara ahora
+var _bono_actual = scrBonoTiempo(tiempo_nivel, global.nivel);
+var _texto_bono = (_bono_actual > 0) ? "BONO +" + string(_bono_actual) : "SIN BONO";
+draw_text_transformed(HUD_MARGEN, HUD_MARGEN + 36, "TIEMPO: " + scrFormatoTiempo(tiempo_nivel) + "   " + _texto_bono, 1.3, 1.3, 0);
+
 draw_set_halign(fa_center);
 draw_text_transformed(room_width / 2, HUD_MARGEN, "NIVEL: " + string(global.nivel), 1.5, 1.5, 0);
 
@@ -54,6 +59,9 @@ if estado == eEstadoNivel.INTRO{
 	draw_text_transformed(room_width / 2, room_height * 0.35, "NIVEL " + string(global.nivel), 4, 4, 0);
 }else if estado == eEstadoNivel.COMPLETADO{
 	draw_text_transformed(room_width / 2, room_height * 0.35, "NIVEL COMPLETADO", 3, 3, 0);
+	draw_text_transformed(room_width / 2, room_height * 0.35 + 70, "TIEMPO: " + scrFormatoTiempo(tiempo_nivel), 2, 2, 0);
+	var _texto_final = (bono_nivel > 0) ? "BONO POR TIEMPO: +" + string(bono_nivel) : "SIN BONO POR TIEMPO";
+	draw_text_transformed(room_width / 2, room_height * 0.35 + 115, _texto_final, 2, 2, 0);
 }
 
 // Restaurar valores por defecto
