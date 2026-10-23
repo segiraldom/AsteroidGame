@@ -65,8 +65,8 @@ switch (estado){
 			}
 		}
 
-		// Nivel completado cuando no queda ninguna roca
-		if instance_number(objRock) == 0 && !instance_exists(objJefeRoca){
+		// Nivel completado cuando no queda ninguna roca ni ningún jefe
+		if instance_number(objRock) == 0 && !scrExisteJefe(){
 			estado = eEstadoNivel.COMPLETADO;
 			temporizador = NIVEL_PAUSA_FIN;
 			// Bono según el tiempo que tardó en completar el nivel

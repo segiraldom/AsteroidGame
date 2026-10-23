@@ -9,7 +9,7 @@
 #macro JUGADOR_ACELERACION_ATRAS 0.05 // empuje por frame al ir hacia atrás (más suave)
 #macro JUGADOR_VEL_MAX 6            // velocidad máxima de la nave
 #macro JUGADOR_FRICCION 0.03        // desaceleración por frame
-#macro JUGADOR_GIRO 1.5               // grados que gira por frame
+#macro JUGADOR_GIRO 2               // grados que gira por frame
 #macro JUGADOR_CADENCIA 12          // frames entre disparos (60 fps -> 5 por segundo)
 
 // --- Bala ---
@@ -160,7 +160,7 @@ enum eFaseFinal {
 
 // --- Jefe del nivel 5: roca gigante ---
 #macro NIVEL_JEFE_1 5                        // nivel en el que aparece la roca gigante (para probar: poner 1)
-#macro JEFE_ROCA_VIDA 40                     // impactos que aguanta con 1 jugador
+#macro JEFE_ROCA_VIDA 80                     // impactos que aguanta con 1 jugador
 #macro JEFE_VIDA_FACTOR_2J 1.6               // la vida se multiplica por esto con 2 jugadores
 #macro JEFE_DANO_FUERTE 3                    // daño de una bala de "más daño"
 #macro JEFE_PUNTOS_IMPACTO 10                // puntos por cada impacto
@@ -197,6 +197,43 @@ enum eAccionJefe {
 	TEMBLOR,
 	EMBESTIDA
 }
+
+// --- Jefe final del nivel 10: pulpo alienígena ---
+#macro NIVEL_JEFE_2 10                        // nivel del jefe final (para probar: poner 1)
+#macro PULPO_VIDA 120                         // impactos que aguanta con 1 jugador
+#macro PULPO_PUNTOS_DERROTA 2000              // puntos por derrotarlo
+#macro PULPO_EXPLOSIONES 10                   // explosiones al derrotarlo
+#macro PULPO_ESCALA 2                         // tamaño respecto al sprite (128x128 -> 256x256)
+#macro PULPO_Y_INICIO 210                     // altura donde aparece el pulpo (arriba)
+#macro PULPO_VELOCIDAD 1.2                    // velocidad de deriva en la fase 1
+#macro PULPO_FASE_2_VIDA 0.6                  // la fase 2 empieza al quedar este % de vida
+#macro PULPO_FASE_3_VIDA 0.3                  // la fase 3 empieza al quedar este % de vida
+#macro PULPO_FASE_2_VEL 1.5                   // multiplicador de velocidad desde la fase 2
+#macro PULPO_BALANCEO 3                       // grados máximo de balanceo al mecerse
+#macro PULPO_BALANCEO_VEL 0.05                // velocidad del balanceo
+#macro PULPO_ZONA_TOPE 80                     // altura mínima a la que sube (nunca sale por arriba)
+#macro PULPO_ZONA_FRACCION 0.6                // fracción de la altura de la sala que no baja
+#macro PULPO_ESPERA_F1 (4 * FPS_JUEGO)        // frames entre ataques en la fase 1
+#macro PULPO_ESPERA_F2 (3 * FPS_JUEGO)        // frames entre ataques en la fase 2
+#macro PULPO_ESPERA_F3 (2 * FPS_JUEGO)        // frames entre ataques en la fase 3
+#macro PULPO_ABANICO_ROCAS 3                  // rocas del abanico en la fase 2
+#macro PULPO_ABANICO 22                       // grados entre rocas del abanico
+#macro PULPO_MAX_LANZADAS 8                   // máximo de rocas en pantalla para lanzar más
+#macro PULPO_VEL_LANZADA 3.5                  // velocidad de las rocas lanzadas
+#macro PULPO_ESPERA_EMBESTIDA (6 * FPS_JUEGO) // frames entre embestidas (fase 3)
+#macro PULPO_TEMBLOR_DURACION FPS_JUEGO       // frames que tiembla antes de embestir
+#macro PULPO_EMBESTIDA_DURACION 40            // frames que dura la embestida
+#macro PULPO_EMBESTIDA_VEL 8                  // velocidad de la embestida
+#macro PULPO_TEMBLOR_FUERZA 5                 // píxeles de temblor
+#macro PULPO_FLASH 4                          // frames de parpadeo blanco al recibir un disparo
+
+// --- Lasers de los ojos del pulpo ---
+#macro PULPO_LASER_VELOCIDAD 7                // velocidad del laser
+#macro PULPO_LASER_VIDA (2.5 * FPS_JUEGO)     // frames que vive el laser antes de desaparecer
+#macro PULPO_LASER_OJO_X 0.13                 // separación de los ojos respecto al centro (fracción del ancho del sprite)
+#macro PULPO_LASER_OJO_Y 0.33                 // altura de los ojos respecto al centro (fracción del alto del sprite)
+#macro PULPO_LASER_F2 2                       // lasers por ataque en la fase 2
+#macro PULPO_LASER_F3 3                       // lasers por ataque en la fase 3
 
 // --- Menú de pausa (Esc) ---
 #macro PAUSA_CONTINUAR 0                     // volver a la partida

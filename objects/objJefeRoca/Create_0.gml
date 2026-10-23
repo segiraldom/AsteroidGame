@@ -11,6 +11,11 @@ espera_ataque = JEFE_ESPERA_F1;
 espera_embestida = JEFE_ESPERA_EMBESTIDA;
 flash = 0;
 
+// Rocas que lanza: abanico, velocidad y máximo en pantalla (los lee scrJefeEscupir)
+abanico = JEFE_ABANICO;
+vel_lanzada = JEFE_VEL_LANZADA;
+max_lanzadas = JEFE_MAX_LANZADAS;
+
 // Empieza a la deriva hacia un lado (no hacia las naves, que empiezan abajo)
 direction = choose(0, 180) + random_range(-30, 30);
 speed = JEFE_VELOCIDAD;

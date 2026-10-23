@@ -29,7 +29,8 @@ switch (accion){
 			// Lanza rocas hacia la nave más cercana
 			espera_ataque -= 1;
 			if espera_ataque <= 0{
-				scrJefeEscupir(id, fase);
+				// 1 roca en las fases 1 y 3, 3 en abanico en la fase 2
+				scrJefeEscupir(id, fase, (fase == 2) ? 3 : 1);
 				if fase == 1{
 					espera_ataque = JEFE_ESPERA_F1;
 				}else if fase == 2{

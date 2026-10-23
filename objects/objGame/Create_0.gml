@@ -51,9 +51,13 @@ repeat (_cantidad){
 	}
 }
 
-// Jefe del nivel 5
+// Jefe del nivel: roca gigante en el 5, pulpo alienígena en el 10
 if es_jefe{
-	instance_create_layer(_centro_x, JEFE_Y_INICIO, "Instances", objJefeRoca);
+	if global.nivel == NIVEL_JEFE_2{
+		instance_create_layer(_centro_x, PULPO_Y_INICIO, "Instances", objJefePulpo);
+	}else{
+		instance_create_layer(_centro_x, JEFE_Y_INICIO, "Instances", objJefeRoca);
+	}
 }
 
 // Colocar las naves en el centro, mirando hacia arriba.
